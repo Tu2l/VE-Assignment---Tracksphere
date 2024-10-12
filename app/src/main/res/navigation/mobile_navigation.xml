@@ -12,14 +12,20 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.vecs.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_trace"
+        android:name="com.vecs.ui.trace.TraceFragment"
+        android:label="@string/title_trace"
+        tools:layout="@layout/fragment_trace" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.vecs.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_planner"
+        android:name="com.vecs.ui.planner.PlannerFragment"
+        android:label="@string/title_planner"
+        tools:layout="@layout/fragment_planner" />
+
+    <fragment
+        android:id="@+id/navigation_more"
+        android:name="com.vecs.ui.more.MoreFragment"
+        android:label="@string/title_planner"
+        tools:layout="@layout/fragment_more" />
 </navigation>
