@@ -4,8 +4,6 @@ import android.os.Bundle
 import android.view.Menu
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.vecs.databinding.ActivityMainBinding
@@ -21,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setSupportActionBar(binding.toolbar)
-        supportActionBar?.setBackgroundDrawable(getDrawable(R.drawable.appbar_drawable))
+        supportActionBar?.setBackgroundDrawable(getDrawable(R.drawable.drawable_appbar))
 
         val navView: BottomNavigationView = binding.navView
         navView.labelVisibilityMode = BottomNavigationView.LABEL_VISIBILITY_LABELED

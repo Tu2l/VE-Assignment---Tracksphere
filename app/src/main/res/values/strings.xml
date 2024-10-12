@@ -4,4 +4,6 @@
     <string name="title_trace">Trace</string>
     <string name="title_planner">Planner</string>
     <string name="title_more">More</string>
+    <string name="search">Search</string>
+    <string name="notifications">Notifications</string>
 </resources>
