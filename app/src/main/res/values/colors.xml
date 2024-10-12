@@ -11,6 +11,10 @@
 <!-- This particular color is used as primary color in the application -->
     <color name='main'>#756EF3</color>
     <color name='main_light'>#859399</color>
+    <color name='running_vehicle_count_color'>#00FF00</color>
+    <color name='idle_vehicle_count_color'>#F5B914</color>
+    <color name='stopped_vehicle_count_color'>#EB4E41</color>
+    <color name='offline_vehicle_count_color'>#232323</color>
 
 
 </resources>

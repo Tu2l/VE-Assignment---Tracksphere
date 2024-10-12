@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_normal"
+        android:layout_weight="@integer/material_motion_duration_long_1"
+        android:background="@drawable/drawable_rounded_corner_with_white_bg"
+        android:drawableEnd="@drawable/ic_chevron_down"
+        android:hint="@string/search_vehicle_here"
+        android:padding="10dp"/>
+
+    <ImageView
+        android:id="@+id/filter_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_normal"
+        android:layout_weight="1"
+        android:background="@drawable/drawable_rounded_corner_with_white_bg"
+        android:contentDescription="@string/filter_button_description"
+        app:srcCompat="@drawable/ic_filter"
+        android:padding="10dp"/>
+    <ImageView
+        android:id="@+id/back_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_normal"
+        android:layout_weight="1"
+        android:background="@drawable/drawable_rounded_corner_with_white_bg"
+        android:contentDescription="@string/go_back_to_previous_screen"
+        app:srcCompat="@drawable/ic_arrow_up"
+        android:padding="10dp"/>
+</LinearLayout>
