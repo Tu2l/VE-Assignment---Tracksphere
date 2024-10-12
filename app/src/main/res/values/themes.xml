@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.VEAssignment" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.VEAssignment" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/main</item>
         <item name="colorPrimaryVariant">@color/main</item>
@@ -12,5 +12,6 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+
     </style>
 </resources>
