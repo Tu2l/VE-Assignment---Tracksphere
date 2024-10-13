@@ -11,9 +11,9 @@ import com.vecs.data.models.Vehicle
 import com.vecs.data.models.VehicleStatus
 import com.vecs.databinding.LayoutTraceListItemBinding
 
-class TraceListAdapter : RecyclerView.Adapter<TraceListAdapter.ViewHolder>() {
+class TraceListAdapter (private val clickListener: TraceListItemClickListener) : RecyclerView.Adapter<TraceListAdapter.ViewHolder>() {
     var data = listOf<Vehicle>()
-        public set(value) {
+        set(value) {
             field = value
             notifyDataSetChanged()
         }
@@ -32,7 +32,7 @@ class TraceListAdapter : RecyclerView.Adapter<TraceListAdapter.ViewHolder>() {
                 R.drawable.drawable_rounded_corner_with_running_color
             )
             var statusText = binding.root.context.getString(R.string.running)
-            var secondaryStatusText = "${vehicle.speed}Kmph"
+            var secondaryStatusText = "${formatDigit(vehicle.speed)}Kmph"
 
             when (vehicle.vehicleStatus) {
                 VehicleStatus.Running -> {
@@ -46,7 +46,7 @@ class TraceListAdapter : RecyclerView.Adapter<TraceListAdapter.ViewHolder>() {
                             R.drawable.drawable_rounded_corner_with_stopped_color
                         )
                     statusText = binding.root.context.getString(R.string.halt)
-                    secondaryStatusText = "${vehicle.waitTime}hrs"
+                    secondaryStatusText = "${formatDigit(vehicle.waitTime)}hrs"
                 }
 
                 VehicleStatus.Idle -> {
@@ -56,7 +56,7 @@ class TraceListAdapter : RecyclerView.Adapter<TraceListAdapter.ViewHolder>() {
                             R.drawable.drawable_rounded_corner_with_idle_color
                         )
                     statusText = binding.root.context.getString(R.string.idle)
-                    secondaryStatusText = "${vehicle.waitTime}hrs"
+                    secondaryStatusText = "${formatDigit(vehicle.waitTime)}hrs"
                 }
 
                 VehicleStatus.Offline -> {
@@ -66,7 +66,7 @@ class TraceListAdapter : RecyclerView.Adapter<TraceListAdapter.ViewHolder>() {
                             R.drawable.drawable_rounded_corner_with_offline_color
                         )
                     statusText = binding.root.context.getString(R.string.offline)
-                    secondaryStatusText = "${vehicle.waitTime}hrs"
+                    secondaryStatusText = "${formatDigit(vehicle.waitTime)}hrs"
                 }
             }
 
@@ -87,7 +87,7 @@ class TraceListAdapter : RecyclerView.Adapter<TraceListAdapter.ViewHolder>() {
                     R.drawable.ic_red_fuel_quantity else R.drawable.ic_green_fuel_quantity
             )
 
-            val chargerVoltage = "${vehicle.chargerVoltage} V"
+            val chargerVoltage = "${formatDigit(vehicle.chargerVoltage)} V"
             binding.chargerVoltageText.text = chargerVoltage
         }
 
@@ -102,6 +102,10 @@ class TraceListAdapter : RecyclerView.Adapter<TraceListAdapter.ViewHolder>() {
             return fuel.quantity <= fuel.capacity / 4
         }
 
+        private fun formatDigit(digit: Number): String {
+            return String.format("%.2f", digit)
+        }
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -113,9 +117,17 @@ class TraceListAdapter : RecyclerView.Adapter<TraceListAdapter.ViewHolder>() {
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val vehicle = data[position]
         holder.bind(vehicle)
+
+        holder.itemView.setOnClickListener {
+            clickListener.onItemClick(vehicle)
+        }
     }
 
     override fun getItemCount(): Int {
         return data.size
+    }
+
+    interface TraceListItemClickListener{
+        fun onItemClick(vehicle: Vehicle)
     }
 }

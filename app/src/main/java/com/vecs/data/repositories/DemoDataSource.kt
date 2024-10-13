@@ -6,8 +6,10 @@ import com.vecs.data.models.Vehicle
 import com.vecs.data.models.VehicleStatus
 import kotlin.random.Random
 
-class DemoDataSource {
-    val demoVehicles = (1..10).map {
+object DemoDataSource {
+    val vehicleData by lazy { getDemoVehicles() }
+
+    private fun getDemoVehicles() = (1..10).map {
         Vehicle(
             primaryVehicleId = (10000..99999).random().toString(),
             secondaryVehicleId = "Vehicle-$it",

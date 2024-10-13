@@ -6,21 +6,21 @@ import com.vecs.data.models.Vehicle
 import com.vecs.data.models.VehicleStatus
 
 class VehicleRepository {
-    private val dataSource = DemoDataSource()
+    private val dataSource = DemoDataSource
 
     /**
      * This method is can be extended to retrieve data from remote source as well as local source,
      * currently it loading data from demoSource
      **/
     fun getVehicles(): LiveData<List<Vehicle>> {
-        return MutableLiveData(dataSource.demoVehicles)
+        return MutableLiveData(dataSource.vehicleData)
     }
 
     /*
      * Returns the vehicle with the given id from the datasource
      */
     fun getVehicleById(id: String): LiveData<Vehicle>? {
-        return MutableLiveData(dataSource.demoVehicles.find { it.primaryVehicleId == id })
+        return MutableLiveData(dataSource.vehicleData.find { it.primaryVehicleId == id })
     }
 
     /*
@@ -55,6 +55,6 @@ class VehicleRepository {
      * Returns the number of vehicles of a particular status from the datasource
      */
     private fun getVehiclesCountByStatus(status: VehicleStatus): Int {
-        return dataSource.demoVehicles.count { it.vehicleStatus == status }
+        return dataSource.vehicleData.count { it.vehicleStatus == status }
     }
 }
