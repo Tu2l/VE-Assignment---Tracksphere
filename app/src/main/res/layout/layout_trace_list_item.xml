@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/drawable_rounded_corner_with_white_bg"
+    android:orientation="horizontal"
+    android:layout_marginVertical="@dimen/margin_normal"
+    android:layout_marginHorizontal="@dimen/margin_big">
+
+    <!--  status indicator color will be determined in runtime based on vehicle status  -->
+    <View
+        android:id="@+id/vehicle_status_indicator"
+        android:layout_width="@dimen/list_item_vehicle_status_indicator_width"
+        android:layout_height="@dimen/trace_list_item_height"
+        android:layout_marginStart="@dimen/margin_big"
+        android:background="@drawable/drawable_rounded_corner_with_running_color" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_marginStart="@dimen/margin_big"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/vehicle_id_primary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/list_item_vehicle_id_primary_text_size"
+            android:textStyle="bold"
+            tools:text="KA02HG1547" />
+
+        <TextView
+            android:id="@+id/vehicle_id_secondary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/main_light"
+            android:textSize="@dimen/list_item_vehicle_id_secondary_text_size"
+            tools:text="MAT788052P7C06674" />
+
+
+    </LinearLayout>
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:columnCount="2"
+        android:rowCount="2">
+
+        <ImageView
+            android:id="@+id/adblue_fuel_quantity_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/margin_normal"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/ic_adblue_blue_quantity" />
+
+        <ImageView
+            android:id="@+id/diesel_quantity_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/margin_normal"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/ic_green_fuel_quantity" />
+
+        <ImageView
+            android:id="@+id/charger_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/ic_charger" />
+
+        <TextView
+            android:id="@+id/charger_voltage_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:fontFamily="sans-serif-condensed"
+            android:text="@string/standard_charger_voltage"
+            android:textColor="@color/running_vehicle_count_color"
+            android:textSize="@dimen/list_item_status_secondary_text_size" />
+
+    </GridLayout>
+
+    <LinearLayout
+        android:id="@+id/status_text_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_marginStart="@dimen/margin_normal"
+        android:background="@drawable/drawable_rounded_corner_with_running_color"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/status_text_primary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="@dimen/list_item_vehicle_id_secondary_text_size"
+            android:textStyle="bold"
+            tools:text="Running" />
+
+        <TextView
+            android:id="@+id/status_text_secondary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="@dimen/list_item_status_secondary_text_size"
+            tools:text="20Kmph" />
+
+    </LinearLayout>
+
+</LinearLayout>

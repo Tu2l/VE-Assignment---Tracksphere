@@ -1,13 +1,25 @@
 package com.vecs.ui.trace
 
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.vecs.data.repositories.VehicleRepository
 
 class TraceViewModel : ViewModel() {
+    private val repository = VehicleRepository()
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is Trace Fragment"
+    fun loadRunningVehiclesCount(): LiveData<Int> {
+        return repository.getRunningVehiclesCount()
     }
-    val text: LiveData<String> = _text
+
+    fun loadStoppedVehiclesCount(): LiveData<Int> {
+        return repository.getStoppedVehiclesCount()
+    }
+
+    fun loadIdleVehiclesCount(): LiveData<Int> {
+        return repository.getIdleVehiclesCount()
+    }
+
+    fun loadOfflineVehiclesCount(): LiveData<Int> {
+        return repository.getOfflineVehiclesCount()
+    }
 }

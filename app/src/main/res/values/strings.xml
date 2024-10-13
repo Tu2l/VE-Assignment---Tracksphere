@@ -9,8 +9,13 @@
     <string name="running">Running</string>
     <string name="idle">Idle</string>
     <string name="stopped">Stopped</string>
+    <string name="halt">Halt</string>
     <string name="offline">Offline</string>
     <string name="search_vehicle_here">Search vehicle here</string>
     <string name="filter_button_description">filter button description</string>
     <string name="go_back_to_previous_screen">Go back to previous screen</string>
+    <string name="todo">TODO</string>
+    <string name="standard_charger_voltage">12.5 V</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
