@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="300dp"
+    android:layout_height="wrap_content"
     android:layout_marginHorizontal="@dimen/margin_very_big"
     android:layout_marginVertical="@dimen/margin_normal"
     android:background="@drawable/drawable_rounded_corner_with_white_bg_and_purple_border"
@@ -22,7 +22,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <LinearLayout
@@ -149,14 +149,14 @@
             <include
                 android:id="@+id/circular_progress_layout"
                 layout="@layout/layout_circular_progress_layout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:layout_weight="1"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -177,7 +177,7 @@
                     android:textSize="12sp" />
 
                 <TextView
-                    android:id="@+id/textView3"
+                    android:id="@+id/milage_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableStart="@drawable/ic_speed"
@@ -189,15 +189,19 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:layout_margin="@dimen/margin_small">
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/margin_normal"
+            android:layout_marginHorizontal="@dimen/margin_big"
+            android:baselineAligned="false"
+            android:gravity="center"
+            android:orientation="horizontal">
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center_vertical"
+                android:paddingEnd="@dimen/margin_small"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -220,20 +224,19 @@
                         android:textColor="@android:color/holo_blue_dark" />
                 </LinearLayout>
 
-
                 <TextView
                     android:id="@+id/lastupdated_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
                     android:text="Last Updated: 12:30"
-                    android:textColor="@color/main_light"/>
+                    android:textColor="@color/main_light" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -242,7 +245,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:clickable="true"
-                    android:text="Need Help?"
+                    android:textAlignment="center"
+                    android:text="@string/need_help"
                     android:textColor="@color/trace_details_border_color"
                     android:textStyle="bold" />
 
@@ -251,11 +255,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="45dp"
                     android:backgroundTint="@color/black"
-                    android:text="Details"
+                    android:text="@string/details"
                     android:textSize="14sp" />
-
             </LinearLayout>
 
         </LinearLayout>
+
+        <include
+            android:id="@+id/additional_details"
+            layout="@layout/layout_additional_trace_details"
+            android:layout_marginHorizontal="@dimen/margin_big"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
     </LinearLayout>
 </LinearLayout>

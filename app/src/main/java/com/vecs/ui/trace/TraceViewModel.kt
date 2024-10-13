@@ -9,11 +9,15 @@ import com.vecs.data.repositories.VehicleRepository
 class TraceViewModel : ViewModel() {
     private val repository = VehicleRepository()
 
-    private val _selectedItem = MutableLiveData<Vehicle>()
-    val selectedItem: LiveData<Vehicle> = _selectedItem
 
-    fun updateSelectedItem(vehicle: Vehicle) {
-        _selectedItem.value = vehicle
+    private val _searchQuery = MutableLiveData<String>()
+    val searchQuery: LiveData<String> = _searchQuery
+
+    private val _selectedItem = MutableLiveData<String>()
+    val selectedItem: LiveData<String> = _selectedItem
+
+    fun updateSelectedItem(vehicleId: String) {
+        _selectedItem.value = vehicleId
     }
 
     fun loadRunningVehiclesCount(): LiveData<Int> {
@@ -34,5 +38,13 @@ class TraceViewModel : ViewModel() {
 
     fun loadVehicles(): LiveData<List<Vehicle>> {
         return repository.getVehicles()
+    }
+
+    fun loadVehicleById(vehicleId: String): LiveData<Vehicle> {
+        return repository.getVehicleById(vehicleId)
+    }
+
+    fun updateSearchQuery(query: String) {
+        _searchQuery.value = query
     }
 }

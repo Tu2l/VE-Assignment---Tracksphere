@@ -11,15 +11,15 @@ object DemoDataSource {
 
     private fun getDemoVehicles() = (1..10).map {
         Vehicle(
-            primaryVehicleId = (10000..99999).random().toString(),
-            secondaryVehicleId = "Vehicle-$it",
+            primaryVehicleId = "KA02HG${(10000..99999).random()}",
+            secondaryVehicleId = "MAT788052P7C0667${it}",
             vehicleStatus = VehicleStatus.values().random(),
             adblueFuel = Fuel(type = FuelType.Adblue, quantity = (0..100).random(), capacity = 100),
-            dieselFuel = Fuel(type = FuelType.Diesel, quantity = (0..200).random(), capacity = 200),
-            chargerVoltage = 220f + (240f - 220f) * Random.nextFloat(),
+            dieselFuel = Fuel(type = FuelType.Diesel, quantity = (0..100).random(), capacity = 100),
+            chargerVoltage = 15f + (20 - 15f) * Random.nextFloat(),
             speed = 100f * Random.nextFloat(),
             waitTime = 60f * Random.nextFloat(),
-            mileage = 1000f + (100000f - 1000f) * Random.nextFloat(),
+            mileage = 10f + (50f - 10f) * Random.nextFloat(),
             location = "City-$it",
             lastUpdated = "2023-12-19T${(0..23).random()}:${(0..59).random()}:00Z"
         )

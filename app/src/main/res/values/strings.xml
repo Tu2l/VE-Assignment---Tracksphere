@@ -24,4 +24,7 @@
     <string name="major_issue">Major Issue</string>
     <string name="_9999">9999</string>
     <string name="location">Location:</string>
+    <string name="tracelist">TraceList</string>
+    <string name="need_help">Need Help?</string>
+    <string name="details">Details</string>
 </resources>

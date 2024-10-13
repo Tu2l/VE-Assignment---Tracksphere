@@ -16,6 +16,7 @@
     <color name='stopped_vehicle_count_color'>#EB4E41</color>
     <color name='offline_vehicle_count_color'>#232323</color>
     <color name='trace_details_border_color'>#756EF3</color>
+    <color name='blue'>#32ADE6</color>
 
 
 </resources>

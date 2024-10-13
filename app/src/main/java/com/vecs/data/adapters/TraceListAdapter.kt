@@ -3,6 +3,8 @@ package com.vecs.data.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Filter
+import android.widget.Filterable
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.recyclerview.widget.RecyclerView
 import com.vecs.R
@@ -11,10 +13,16 @@ import com.vecs.data.models.Vehicle
 import com.vecs.data.models.VehicleStatus
 import com.vecs.databinding.LayoutTraceListItemBinding
 
-class TraceListAdapter (private val clickListener: TraceListItemClickListener) : RecyclerView.Adapter<TraceListAdapter.ViewHolder>() {
+class TraceListAdapter(private val clickListener: TraceListItemClickListener) :
+    RecyclerView.Adapter<TraceListAdapter.ViewHolder>(),
+    Filterable {
+
+    private var filteredData: List<Vehicle> = listOf()
+
     var data = listOf<Vehicle>()
         set(value) {
             field = value
+            filteredData = value
             notifyDataSetChanged()
         }
 
@@ -115,7 +123,7 @@ class TraceListAdapter (private val clickListener: TraceListItemClickListener) :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val vehicle = data[position]
+        val vehicle = filteredData[position]
         holder.bind(vehicle)
 
         holder.itemView.setOnClickListener {
@@ -124,10 +132,36 @@ class TraceListAdapter (private val clickListener: TraceListItemClickListener) :
     }
 
     override fun getItemCount(): Int {
-        return data.size
+        return filteredData.size
     }
 
-    interface TraceListItemClickListener{
+    override fun getFilter(): Filter {
+        return object : Filter() {
+            override fun performFiltering(constraint: CharSequence?): FilterResults {
+                val filterResults = FilterResults()
+                val query = constraint?.toString()?.toLowerCase()
+
+                filteredData = if (query.isNullOrEmpty()) {
+                    data // If query is empty, show all items
+                } else {
+                    data.filter { item ->
+                        item.primaryVehicleId.toLowerCase().contains(query) // Filter based on name
+                    }
+                }
+
+                filterResults.values = filteredData
+                filterResults.count = filteredData.size
+                return filterResults
+            }
+
+            override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
+                filteredData = results?.values as? List<Vehicle> ?: listOf()
+                notifyDataSetChanged()
+            }
+        }
+    }
+
+    interface TraceListItemClickListener {
         fun onItemClick(vehicle: Vehicle)
     }
 }

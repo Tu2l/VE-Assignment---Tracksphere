@@ -19,7 +19,7 @@ class VehicleRepository {
     /*
      * Returns the vehicle with the given id from the datasource
      */
-    fun getVehicleById(id: String): LiveData<Vehicle>? {
+    fun getVehicleById(id: String): LiveData<Vehicle> {
         return MutableLiveData(dataSource.vehicleData.find { it.primaryVehicleId == id })
     }
 

@@ -2,6 +2,7 @@ package com.vecs.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 
 /*
  * V -> ViewModel
