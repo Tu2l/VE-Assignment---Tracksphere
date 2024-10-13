@@ -151,7 +151,7 @@
                 layout="@layout/layout_circular_progress_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"/>
+                android:layout_weight="1" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -190,8 +190,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="@dimen/margin_normal"
             android:layout_marginHorizontal="@dimen/margin_big"
+            android:layout_marginVertical="@dimen/margin_normal"
             android:baselineAligned="false"
             android:gravity="center"
             android:orientation="horizontal">
@@ -201,8 +201,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center_vertical"
-                android:paddingEnd="@dimen/margin_small"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:paddingEnd="@dimen/margin_small">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -245,8 +245,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:clickable="true"
-                    android:textAlignment="center"
                     android:text="@string/need_help"
+                    android:textAlignment="center"
                     android:textColor="@color/trace_details_border_color"
                     android:textStyle="bold" />
 
@@ -264,9 +264,9 @@
         <include
             android:id="@+id/additional_details"
             layout="@layout/layout_additional_trace_details"
-            android:layout_marginHorizontal="@dimen/margin_big"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:visibility="gone"/>
+            android:layout_marginHorizontal="@dimen/margin_big"
+            android:visibility="gone" />
     </LinearLayout>
 </LinearLayout>

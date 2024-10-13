@@ -14,7 +14,7 @@
         android:background="@drawable/drawable_rounded_corner_with_white_bg"
         android:drawableEnd="@drawable/ic_chevron_down"
         android:hint="@string/search_vehicle_here"
-        android:padding="10dp"/>
+        android:padding="10dp" />
 
     <ImageView
         android:id="@+id/filter_btn"
@@ -24,8 +24,9 @@
         android:layout_weight="1"
         android:background="@drawable/drawable_rounded_corner_with_white_bg"
         android:contentDescription="@string/filter_button_description"
-        app:srcCompat="@drawable/ic_filter"
-        android:padding="10dp"/>
+        android:padding="10dp"
+        app:srcCompat="@drawable/ic_filter" />
+
     <ImageView
         android:id="@+id/back_btn"
         android:layout_width="wrap_content"
@@ -34,6 +35,6 @@
         android:layout_weight="1"
         android:background="@drawable/drawable_rounded_corner_with_white_bg"
         android:contentDescription="@string/go_back_to_previous_screen"
-        app:srcCompat="@drawable/ic_arrow_up"
-        android:padding="10dp"/>
+        android:padding="10dp"
+        app:srcCompat="@drawable/ic_arrow_up" />
 </LinearLayout>

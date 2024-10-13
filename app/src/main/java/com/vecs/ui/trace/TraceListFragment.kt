@@ -5,9 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.get
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.vecs.data.adapters.TraceListAdapter
 import com.vecs.data.models.Vehicle
@@ -15,7 +12,8 @@ import com.vecs.databinding.FragmentTraceListBinding
 import com.vecs.ui.BaseFragment
 
 
-class TraceListFragment : BaseFragment<TraceViewModel, FragmentTraceListBinding>(),TraceListAdapter.TraceListItemClickListener {
+class TraceListFragment : BaseFragment<TraceViewModel, FragmentTraceListBinding>(),
+    TraceListAdapter.TraceListItemClickListener {
     private val sharedViewModel: TraceViewModel by activityViewModels()
 
     override fun onCreateView(
@@ -39,7 +37,7 @@ class TraceListFragment : BaseFragment<TraceViewModel, FragmentTraceListBinding>
             adapter.data = it
         }
 
-        viewmodel.searchQuery.observe(viewLifecycleOwner){
+        viewmodel.searchQuery.observe(viewLifecycleOwner) {
             adapter.filter.filter(it)
         }
     }

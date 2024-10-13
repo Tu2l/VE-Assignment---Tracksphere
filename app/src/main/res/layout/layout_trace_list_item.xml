@@ -3,10 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/drawable_rounded_corner_with_white_bg"
-    android:orientation="horizontal"
+    android:layout_marginHorizontal="@dimen/margin_very_big"
     android:layout_marginVertical="@dimen/margin_normal"
-    android:layout_marginHorizontal="@dimen/margin_very_big">
+    android:background="@drawable/drawable_rounded_corner_with_white_bg"
+    android:orientation="horizontal">
 
     <!--  status indicator color will be determined in runtime based on vehicle status  -->
     <View
@@ -103,11 +103,11 @@
         android:id="@+id/status_text_layout"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:minWidth="@dimen/min_width_status_text"
         android:layout_gravity="center"
         android:layout_marginStart="@dimen/margin_normal"
         android:background="@drawable/drawable_rounded_corner_with_running_color"
         android:gravity="center"
+        android:minWidth="@dimen/min_width_status_text"
         android:orientation="vertical">
 
         <TextView
