@@ -2,6 +2,14 @@
 
 This document outlines the setup and design of the Android project.
 
+## Screenshots
+| Image |
+|---|---|
+| <img src="./screenshots/Screenshot_20241014-155756.png" alt="Image 1" width="500"> |
+| <img src="./screenshots/Screenshot_20241014-155808.png" alt="Image 2" width="500"> |
+| <img src="./screenshots/Screenshot_20241014-155833.png" alt="Image 3" width="500"> |
+| <img src="./screenshots/Screenshot_20241014-155848.png" alt="Image 4" width="500"> |
+
 ## Project Structure
 
 The project follows a standard Android project structure with the following key directories:
